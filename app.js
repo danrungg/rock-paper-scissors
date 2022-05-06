@@ -6,20 +6,49 @@ const computerPlay = () => {
 
 const playRound = (playerSelection, computerSelection) => {
     if (playerSelection === computerSelection) {
-        return "TIE";
+        return "tie";
     } else if (
         (playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
-        return "WIN";
+        return "playerWin";
     } else {
-        return "LOOSE";
+        return "computerWin";
     }
 };
 
-playerSelection = "paper".toLowerCase();
-computerSelection = computerPlay();
-console.log(computerSelection);
+const game = () => {
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 0; i < 5; i++) {
+        let playerSelection = prompt(`??? ${i + 1} of 5`).toLowerCase();
+        console.log(playerSelection);
+        let computerSelection = computerPlay();
+        console.log(`The computer choose ${computerSelection}`);
 
-console.log(playRound(playerSelection, computerSelection));
+        if (playRound(playerSelection, computerSelection) === "playerWin") {
+            playerScore += 1;
+            console.log(
+                `Playerscore: ${playerScore}, ComputerScore: ${computerScore}`
+            );
+        } else if (
+            playRound(playerSelection, computerSelection) === "computerWin"
+        ) {
+            computerScore += 1;
+            console.log(
+                `Playerscore: ${playerScore}, ComputerScore: ${computerScore}`
+            );
+        } else {
+            console.log("TIE!");
+        }
+    }
+
+    if (playerScore > computerScore) {
+        return "You won!";
+    } else {
+        return "The Computer won!";
+    }
+};
+
+console.log(game());
