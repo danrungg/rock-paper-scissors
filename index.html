@@ -4,12 +4,68 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+
+        <title>GAME</title>
     </head>
     <body>
-        <button>ROCK</button>
-        <button>PAPER</button>
-        <button>SCISSORS</button>
+        <div class="container">
+            <div class="header">ROCK PAPER SCISSOURS</div>
+            <div class="content">
+                <div class="items">
+                    <img
+                        id="rock"
+                        class="item"
+                        src="./img/rock.svg"
+                        alt="rock"
+                    />
+                    <img
+                        id="paper"
+                        class="item"
+                        src="./img/paper.svg"
+                        alt="paper"
+                    />
+                    <img
+                        id="scissors"
+                        class="item"
+                        src="./img/scissors.svg"
+                        alt="scissors"
+                    />
+                </div>
+                <div class="score">
+                    <div class="score-box">
+                        <div class="playerScoreBoard">0</div>
+                        <div style="margin: 0px 50px">-</div>
+                        <div class="computerScoreBoard">0</div>
+                    </div>
+                </div>
+                <div class="results">
+                    Round <span class="roundNumber">0</span>:
+                    <span class="scoreMessage"
+                        >to score 5 points wins the game</span
+                    >
+                </div>
+            </div>
+            <div class="footer">
+                <p>Made with ❤️ by Daniel</p>
+                <p>
+                    Icon Source:&nbsp
+                    <a
+                        href="https://www.vecteezy.com/free-vector/rock-paper-scissors"
+                        >Rock Paper Scissors Vectors by Vecteezy</a
+                    >
+                </p>
+            </div>
+
+            <div class="popup-wrapper">
+                <div class="popup">
+                    <div class="popup-content">
+                        <h1 class="winnerQuestion"></h1>
+                        <button class="playAgain">Try again?</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <script src="./app.js"></script>
     </body>
 </html>
